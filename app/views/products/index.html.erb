@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    Bootstrap
-  </a>
-</nav>
-            <h3>Products</h3>
-            <% @products.each do |f| %>
-            <div class="container-fluid ">
-            <div class="row">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            Bootstrap
+        </a>
+    </nav>
+    <h3>Products</h3>
+    <% @products.each do |product| %>
+    <div class="container-fluid ">
+        <div class="row">
+<% byebug %>
+            <%# <div class="col p-3">Image : <%= f.image_url %>
+            <div class="col p-3"><%= image_tag product.image_url%></div>
         
-                <div class="col p-3">Image : <%= f.image_url %></div>
-              <%# <div>  <%= link_to "Download image", f.image_url %>
-                <div class="col p-3">Name :<%= f.name %></div>
-                <div class="col p-3">Price : <%= f.price %></div>
-                <div class="col p-3">Quantity : <%= f.quantity %></div>
-                <div class="col p-3">Category_id : <%= f.category_id %></div>
-                <div class="col p-3">Store_id : <%= f.store_id %></div>
-            </div>
-            </div>
-            <% end %></br>
+            <div class="col p-3">Name :<%= product.name %></div>
+            <div class="col p-3">Price : <%= product.price %></div>
+            <div class="col p-3">Quantity : <%= product.quantity %></div>
+            <%# <div class="col p-3">Category_id : <%= product.category_id %>
+            <%# <div class="col p-3">Store_id : <%= product.store_id %>
+        </div>
+    </div>
+    <% end %></br>
 </body>
+
 </html>
