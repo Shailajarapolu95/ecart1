@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <section class="vh-50 gradient-custom">
+    <div class="container py-5 h-50">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-light text-black" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div>
+                <%= flash[:notice] if flash[:notice]%>
+              </div>
+              <h3>Admin Login</h3></br>
+              <%= form_tag '/login' do %>
+              <%= label_tag 'Username :'%>
+              <%= text_field_tag :name, params[:name] %></br>
+              <br>
+              <%= label_tag 'Password : '%>
+              <%= password_field_tag :password %></p></br>
+
+              <%= submit_tag "Log In" %></br></br>
+              <strong>
+                New?&nbsp;Sign Up&nbsp;here!
+              </strong>
+              <span>
+                <a class="nav-link" href="/signup">Sign Up</a>
+              </span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+  </section>
+</body>
