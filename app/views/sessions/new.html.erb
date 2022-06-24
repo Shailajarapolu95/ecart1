@@ -21,9 +21,9 @@
               <div>
                 <%= flash[:notice] if flash[:notice]%>
               </div>
-              <h3>Admin Login</h3></br>
+              <h3>User Login</h3></br>
               <%= form_tag '/login' do %>
-              <%= label_tag 'Username :'%>
+              <%= label_tag 'Email :'%>
               <%= text_field_tag :name, params[:name] %></br>
               <br>
               <%= label_tag 'Password : '%>

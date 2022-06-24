@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    admin = Admin.find_by(params[:admin_name])
-    if admin && admin.authenticate(params[:password])
-      session[:admin_id] = admin.id
+    user = User.find_by(params[:user_name])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:notice]="Login successful"
       redirect_to '/products'
     else
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:admin_id] = nil
+    session[:user_id] = nil
     flash[:notice]="Logged Out"
     redirect_to '/login'
   end
