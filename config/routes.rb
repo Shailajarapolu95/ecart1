@@ -1,19 +1,13 @@
 Rails.application.routes.draw do
-  get 'products/index'
-  get 'products/new'
-  get 'products/edit'
-  get 'products/show'
   resources :products
-  # get 'products/index'
-  # get 'products/new'
-  # get 'products/show'
-  # get 'products/edit'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
   get 'admin/create'
   get 'admin/new'
   get 'admin/index'
+  resources :products
+  get "/new",to:"products#new"
   devise_for :users
   get '/signup' => 'admin#new'
   post '/users' => 'admin#create'

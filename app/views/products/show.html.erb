@@ -1,2 +1,28 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="container">
+    <div>
+        <%= @product.image_url %>
+    </div>
+    <div>
+        <label>name</label>
+        <%= @product.name %>
+    </div>
+     <div>
+        <label>Price</label>
+        <%= @product.price %>
+    </div>
+     <div>
+        <label>Quantity</label>
+        <%= @product.quantity %>
+    </div>
+     <div>
+        <label>Category Id</label>
+        <%= @product.category_id %>
+    </div>
+     <div>
+        <label>Store Id</label>
+        <%= @product.store_id %>
+    </div>
+    <div>
+        <%= link_to 'Back',"/" %>
+    </div>
+</div>
