@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:notice]="Login successful"
-      redirect_to '/products'
+      if user.admin==true
+        redirect_to "dashboard"
+      else
+        redirect_to "Shopping(list of products)"
+      end
     else
       flash[:notice]="Invalid Email or Password"
       redirect_to '/login'
